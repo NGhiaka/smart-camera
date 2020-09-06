@@ -1,17 +1,20 @@
 import React from 'react';
-import Header from './templates/Header'
+import { Header } from "./components/Header";
+// import { Footer } from "./components/Footer";
+import { AppRoutes } from './AppRoutes';
 
-// import useModel from './useModel'
-// import FaceDetection from './components/face_recognation'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faHome, faCameraRetro, faUsers } from '@fortawesome/free-solid-svg-icons'
 
-function App() {
-	
-	// const model = useModel(process.env.PUBLIC_URL + '/model/haarcascade_frontalface_default.xml')
-	return (
-		<div className="App">
-		  	<Header />
-		</div>
-	);
+library.add(faHome, faCameraRetro, faUsers)
+
+export default function App() {
+  return (
+    <div className="App">
+      <AppRoutes />
+      <Header />
+
+      {/* <Footer /> */}
+    </div>
+  );
 }
-
-export default App;
