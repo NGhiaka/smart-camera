@@ -1,7 +1,8 @@
 const PATHS = {
     HOMEPAGE: "/",
     CAMERA: "/camera",
-    INTRODUCE: "/introduce"
+    INTRODUCE: "/introduce",
+    TEAM: "/team"
   }
   
   export default PATHS;

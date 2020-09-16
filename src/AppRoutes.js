@@ -8,7 +8,7 @@ import {
 import HomePage from "./pages/HomePage";
 import SmartCamera from "./pages/SmartCamera";
 import Introduce from "./pages/Introduce";
-
+import Team from "./pages/Team";
 export function AppRoutes() {
   return (
     <Switch>
@@ -20,6 +20,9 @@ export function AppRoutes() {
           </Route>
           <Route path="/introduce">
             <Introduce />
+          </Route>
+          <Route path="/team">
+            <Team />
           </Route>
         </Switch>
   )

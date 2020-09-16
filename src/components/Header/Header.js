@@ -18,17 +18,23 @@ export default function Header() {
               <FontAwesomeIcon size="lg" icon="home" />
               <span className="mt-1">Home</span>
             </NavLink>
-          </li>
+          </li>         
           <li className="nav-item">
+            <NavLink className="d-flex flex-column align-items-center pt-2 pb-1" activeClassName="active" to="/introduce">
+              <FontAwesomeIcon size="lg" icon="info-circle" />
+              <span className="mt-1">Introduce</span>
+            </NavLink>
+          </li>
+           <li className="nav-item">
             <NavLink className="d-flex flex-column align-items-center pt-2 pb-1" activeClassName="active" to="/camera">
               <FontAwesomeIcon size="lg" icon="camera-retro" />
               <span className="mt-1">Smart Camera</span>
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="d-flex flex-column align-items-center pt-2 pb-1" activeClassName="active" to="/introduce">
+            <NavLink className="d-flex flex-column align-items-center pt-2 pb-1" activeClassName="active" to="/team">
               <FontAwesomeIcon size="lg" icon="users" />
-              <span className="mt-1">Introduce</span>
+              <span className="mt-1">Team</span>
             </NavLink>
           </li>
         </ul>
