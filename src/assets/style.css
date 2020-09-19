@@ -1,3 +1,6 @@
+/*=============================================
+=            RESET AND GENERAL               =
+=============================================*/
 .body {
     margin: 0;
     padding: 0;
@@ -8,13 +11,48 @@
     font-size: 14px;
     color: rgba(0,0,0,.87);
 }
-/* Header */
+
+.sub-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1;
+    font-family: 'Roboto', sans-serif;
+}
+
+.title {
+    font-size: 30px;
+    line-height: 1;
+    color: #304771;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    padding-top: 0;
+    text-transform: uppercase;
+}
+
+.title-wrapper:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #ffb400;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*=====  End of RESET AND GENERAL     ======*/
+
+
+/*=============================================
+=            HEADER AND NAV-MENU            =
+=============================================*/
 .navbar {
     bottom: 0;
     z-index: 2;
-    background-color: rgba(0,0,0,.3);
     height: 62px;
-
 }
 
 .navbar-nav .nav-item {
@@ -28,16 +66,56 @@
     transition: all 0.5s ease;
 
 }
-.navbar-nav .nav-item a.active,
-.navbar-nav .nav-item a:hover
-/* .navbar-nav .nav-item a.active[href="/"]:hover*/ { 
+.navbar {
+    box-shadow: 3px 0 7px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+}
+.navbar .navbar-nav .nav-item a {
+    color: #213047;
+}
+.navbar .navbar-nav .nav-item a.active,
+.navbar .navbar-nav .nav-item a:hover {
+    color: #ffb400;
+}
+.navbar .navbar-nav .nav-item a:before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5px;
+    width: 0;
+    height: 2px;
+    background-color: #ffb400;
+    transition: all 0.3s ease;
+}
+.navbar .navbar-nav .nav-item a:hover:before {
+    width: calc(100% - 60px);
+}
+
+
+/*=====  End of HEADER AND NAV-MENU  ======*/
+
+
+/*=============================================
+=                HOMEPAGE                   =
+=============================================*/
+/* Homepage custom menu */
+.home  + .navbar {
+    background-color: rgba(0,0,0,.3);
+
+}
+.home  + .navbar .navbar-nav .nav-item a {
+    color: #fff;
+}
+.home  + .navbar .navbar-nav .nav-item a::before {
+    display: none;
+}
+.home  + .navbar .navbar-nav .nav-item a.active,
+.home  + .navbar .navbar-nav .nav-item a:hover { 
     background: rgba(255,255,255,.2);
 }
 
-/* .navbar-nav .nav-item a.active[href="/"] {
-    background-color: transparent;
-} */
-
+/* Homepage content */
 .home {
     width: 100%;
     height: 100vh;
@@ -68,16 +146,14 @@
     /* padding: 0 10%; */
     margin-top: -30px;
 }
-.home .title {
+.home .home-title {
    font-size: 40px;
    font-weight: 700;
 }
-.home .sub-title {
+.home .home-sub-title {
     font-size: 28px;
 }
-
-
-/* .sub-title {
+/* .home-sub-title {
     animation:fadeInUp 3s ease infinite;
     animation-duration: 3s;
 }
@@ -86,34 +162,243 @@
     100%{transform:translate(0px, 0); opacity: 1;}
   } */
 
-  /* .camera {
-    width: 100%;
-    height: 100vh;
-    background-image: url(./images/camera-bg.jpg);
+/*=====  End of     HOMEPAGE         ======*/
+
+
+/*=============================================
+=              INTRODUCE PAGE               =
+=============================================*/
+.team,
+.introduce {
+    min-height: calc(100vh - 62px);
+    margin-bottom: 62px;
     background-size: cover;
     background-position: center;
-    position: relative;
-} */
-.camera + .navbar {
-    /* background-color: #085C80; */
-    background-image: url(./images/home-bg.jpg);
-    background-size: cover;
-    background-position: bottom;
+    background-image: url(./images/intro-bg.jpg);
+
 }
 
+.introduce .feature-item {
+    border: 1px solid #E0E0E0;
+    background-color: #FFF;
+}
+
+.introduce .feature-icon {
+    font-size: 70px;
+    color: #ffb400;
+}
+
+.introduce .feature-title {
+    font-size: 22px;
+    color: #304771;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.introduce .feature-content {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #666;
+    line-height: 2;
+}
+
+
+/*=====  End of   INTRODUCE PAGE     ======*/
+
+
+
+/*=============================================
+=                 TEAM PAGE                 =
+=============================================*/
+.team-content {
+    margin: 0 -2px;
+}
+.member {
+    cursor: pointer;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.8s ease;
+    margin: 0 2px;
+    border: 1px solid #E0E0E0;
+    background-color: #FFF;
+}
+
+.member:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 0;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background-color: #304771;
+    transition: all 0.5s ease
+}
+
+.member .member-wrapper {
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    transition: all 0.8s ease
+}
+
+.member .member-info {
+    text-align: center;
+    /* overflow: hidden */
+}
+
+.member .member-info .member-avatar {
+    display: block
+}
+
+.member .member-info .member-avatar img {
+    border-radius: 50%;
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    transition: all 0.8s ease;
+    border: 2px solid #ffb400;
+}
+
+.member .member-info .member-name {
+    /* font-size: 18px; */
+    /* color: #49575f; */
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    /* font-weight: bold; */
+    font-size: 20px;
+    color: #304771;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.member .member-info .member-job {
+    color: #ffb400;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.member .member-info .member-email {
+    color: #666;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.member .member-info .member-desctiption {
+    display: none;
+    text-align: justify;
+    /* font-size: 13px; */
+    /* margin-bottom: 12px; */
+    height: 60px;
+    overflow: hidden;
+    transition: all 0.8s ease;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.5;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.member .member-socials {
+    text-align: center;
+    margin-bottom: -5px;
+}
+
+.member .member-socials a {
+    margin-right: 10px;
+    /* margin-bottom: 10px; */
+    width: 30px;
+    height: 30px;
+    /* text-align: center; */
+    line-height: 30px;
+    border-radius: 3px;
+    background-color: #a4abaf;
+    display: inline-block;
+    color: #fff;
+    transition: all .2s ease-in;
+    border: 1px solid #a4abaf
+
+}
+
+.member .member-name, .member .member-job, .member .member-socials a {
+    transition: all 0.5s ease
+}
+
+.member:hover {
+    background-color: #fff7e6;
+}
+
+.member:hover .member-info .member-avatar img {
+    max-width: 130px;
+    margin-bottom: 10px
+}
+
+.member:hover .member-info .member-name {
+    /* color: #fff; */
+}
+
+.member:hover .member-info .member-job {
+    /* color: #fff; */
+    /* margin-bottom: 10px */
+}
+
+.member:hover .member-info .member-desctiption {
+    display: block
+}
+
+.member:hover .member-socials a {
+    color: #a4abaf;
+    background-color: #fff;
+}
+
+.member:hover .member-socials a.facebook:hover {
+    color: #3b5998
+}
+
+.member:hover .member-socials a.google:hover {
+    color: #dc4e41
+}
+
+.member:hover .member-socials a.git:hover {
+    color: #24292e
+}
+
+.member:hover:after {
+    /* right: 0px */
+    width: 100%;
+}
+
+.member:hover .member-desctiption {
+    /* color: #fff */
+}
+
+
+
+/*=====  End of      TEAM PAGE       ======*/
+
+
+
+/*=============================================
+=               CAMERA PAGE                 =
+=============================================*/
 .camera {
     min-height: calc(100vh - 62px);
     padding: 30px;
-    background-color: #1a1a1a;
-    color: #F0F0F0;
 }
-
-.camera .title {
-    color: #11D8E8;
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0 0 40px 0;
-}
+/*  */
+/* .camera .title { */
+    /* color: #11D8E8; */
+    /* font-size: 28px; */
+    /* font-weight: bold; */
+    /* margin: 0 0 40px 0; */
+/* } */
 
 .camera .action button {
     width: 120px;
@@ -377,96 +662,5 @@
 }
 
 
-/* End.Custom select */
+/*=====  End of    CAMERA PAGE       ======*/
 
-/* CSS INTRODUCE PAGE */
-
-.introduce + .navbar {
-    box-shadow: 3px 0 7px rgba(0, 0, 0, 0.3);
-    background-color: #fff;
-    top: 0;
-}
-.introduce + .navbar .navbar-nav .nav-item a {
-    color: #213047;
-}
-.introduce + .navbar .navbar-nav .nav-item a.active,
-.introduce + .navbar .navbar-nav .nav-item a:hover {
-    color: #ffb400;
-}
-.introduce + .navbar .navbar-nav .nav-item a:before {
-    position: absolute;
-    content: "";
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 5px;
-    width: 0;
-    height: 2px;
-    background-color: #ffb400;
-    transition: all 0.3s ease;
-}
-.introduce + .navbar .navbar-nav .nav-item a:hover:before {
-    width: calc(100% - 60px);
-}
-.introduce {
-    min-height: calc(100vh - 62px);
-    margin-top: 62px;
-    background-image: url(./images/intro-bg.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.introduce .sub-title {
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #5a5f68;
-    font-weight: 500;
-    margin-bottom: 15px;
-    line-height: 1;
-    font-family: 'Roboto', sans-serif;
-}
-
-.introduce .title {
-    font-size: 30px;
-    line-height: 1;
-    color: #304771;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    padding-top: 0;
-    text-transform: uppercase;
-}
-
-.introduce .title-wrapper:after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 2px;
-    background-color: #ffb400;
-    margin-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.introduce .feature-item {
-    border: 1px solid #E0E0E0;
-    background-color: #FFF;
-}
-
-.introduce .feature-icon {
-    font-size: 70px;
-    color: #ffb400;
-}
-
-.introduce .feature-title {
-    font-size: 22px;
-    color: #304771;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.introduce .feature-content {
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    color: #666;
-    line-height: 2;
-}

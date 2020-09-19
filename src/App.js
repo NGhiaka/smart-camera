@@ -4,7 +4,7 @@ import { Header } from "./components/Header";
 import { AppRoutes } from './AppRoutes';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faCameraRetro, faUsers, faInfoCircle, faSmile, faObjectGroup } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faCameraRetro, faUsers, faInfoCircle, faSmile, faObjectGroup } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faHome, faCameraRetro, faUsers, faInfoCircle, faSmile, faObjectGroup )
 
