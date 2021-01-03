@@ -664,3 +664,39 @@
 
 /*=====  End of    CAMERA PAGE       ======*/
 
+.introduce .feature-icon {
+    font-size: 70px;
+    color: #ffb400;
+}
+
+.introduce .feature-title {
+    font-size: 22px;
+    color: #304771;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.introduce .feature-content {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #666;
+    line-height: 2;
+}
+
+/* ket qua detect */
+.result-detect{
+    position: relative;
+}
+
+.result-detect #video{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    width: auto;
+    height: auto;
+}
+.result-detect canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
